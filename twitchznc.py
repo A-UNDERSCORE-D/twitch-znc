@@ -81,20 +81,20 @@ class twitchznc(znc.Module):
         return znc.HALTCORE  # Nothing to really do here, I want to get it but dont want to deal with it
 
     def handle_roomstate(self, msg: CMessage) -> znc.ModRet:
-        emote_only = str(msg.GetTag('emote-only')) == 1
+        emote_only = str(msg.GetTag('emote-only')) == '1'
         try:
             followers_only = int(str(msg.GetTag('followers-only')))
         except ValueError:
             followers_only = -1
 
-        r9k = str(msg.GetTag('r9k')) == 1
+        r9k = str(msg.GetTag('r9k')) == '1'
 
         try:
             slow = int(str(msg.GetTag('slow')))
         except ValueError:
             slow = -1
 
-        subs_only = str(msg.GetTag('subs-only')) == 1
+        subs_only = str(msg.GetTag('subs-only')) == '1'
 
         message = []
 
