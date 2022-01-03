@@ -1,0 +1,4 @@
+znc_install
+znc.pyi
+venv
+.mypy_cache
